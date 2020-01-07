@@ -8,4 +8,6 @@ Gem::Specification.new do |s|
   s.email       = 'vyacheslav@alexeev.it'
   s.files       = ["lib/color_name.rb", "lib/color_name/names.rb", "lib/color_name/exceptions.rb"]
   s.homepage    = 'https://github.com/VyacheslavAlexeev/color_name'
+
+  s.add_development_dependency 'rspec'
 end
