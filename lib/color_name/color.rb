@@ -64,7 +64,7 @@ module ColorName
           ((r - g) / delta) + 4
         end
 
-      h = (h * 60).ceil
+      h = (h * 60).to_i
 
       [h, s, l]
     end
