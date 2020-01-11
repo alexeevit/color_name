@@ -23,7 +23,7 @@ RSpec.describe ColorName do
     end
 
     context 'with invalid hex' do
-      let(:hex) { 'f0' }
+      let(:hex) { '#g00' }
 
       it 'raises InvalidColor error' do
         expect { subject }.to raise_error ColorName::InvalidColor
