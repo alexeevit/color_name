@@ -19,3 +19,7 @@ gem 'color_name'
 ColorName.get('#f00') # Red
 ColorName.get('#e02253') # Amaranth
 ```
+
+# License
+
+Licensed under the MIT license, see the separate LICENSE file.
