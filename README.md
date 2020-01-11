@@ -1,5 +1,5 @@
 # ColorName
-ColorName is a simple ruby gem that allows you to get a name of any color.
+ColorName is a simple ruby gem that allows you to get a name of any color. Based on [Name That Color](https://www.color-blindness.com/color-name-hue-tool/js/ntc.js).
 
 ## Install
 
