@@ -55,7 +55,7 @@ RSpec.describe ColorName::Color do
   end
 
   describe '#hsl' do
-    let(:hsl) { [45, 1.0, 0.5] }
+    let(:hsl) { [46, 1, 0.5] }
 
     it 'returns correct value' do
       expect(subject.hsl).to eq(hsl)

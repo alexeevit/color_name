@@ -1,3 +1,5 @@
+require 'bigdecimal'
+
 module ColorName
   class Color
     def initialize(hex)
@@ -37,22 +39,15 @@ module ColorName
     end
 
     def calculate_hsl
-      r, g, b = rgb.map { |c| c.to_f / 255 }
+      r, g, b = rgb.map { |c| BigDecimal(c) / 255 }
 
       max_ratio = [r, g, b].max
       min_ratio = [r, g, b].min
 
       l = (max_ratio + min_ratio) / 2
 
-      return 0, 0, l if max_ratio == min_ratio
-
       delta = max_ratio - min_ratio
-      s =
-        if l > 0.5
-          delta / (2 - max_ratio - min_ratio)
-        else
-          delta / (max_ratio + min_ratio)
-        end
+      return 0, 0, l if delta.zero?
 
       h =
         case max_ratio
@@ -64,7 +59,9 @@ module ColorName
           ((r - g) / delta) + 4
         end
 
-      h = (h * 60).to_i
+      h = (h * 60).ceil
+
+      s = delta / (1 - (2*l - 1).abs)
 
       [h, s, l]
     end
