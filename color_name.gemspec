@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = 'color_name'
-  s.version       = '0.0.2'
+  s.version       = '0.0.3'
   s.date          = '2020-01-11'
   s.summary       = "Get name of the color"
   s.description   = "A simple ruby gem that allows you to get a name of any color."
