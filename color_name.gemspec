@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.email         = 'alexeev.corp@gmail.com'
   s.files         = ["lib/color_name.rb", "lib/color_name/color.rb", "lib/color_name/names.rb", "lib/color_name/exceptions.rb"]
   s.require_paths = ["lib"]
-  s.homepage      = 'https://github.com/alexeev.it/color_name'
+  s.homepage      = 'https://github.com/alexeevit/color_name'
   s.licenses      = ['MIT']
 
   s.add_development_dependency 'rspec'
