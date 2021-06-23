@@ -15,9 +15,10 @@ gem 'color_name'
 ## Usage
 
 ```ruby
-# You have to
-ColorName.get('#f00') # Red
-ColorName.get('#e02253') # Amaranth
+irb(main):001:0> ColorName.get('#f00')
+=> "Red"
+irb(main):002:0> ColorName.get('#e02253')
+=> "Amaranth"
 ```
 
 # License

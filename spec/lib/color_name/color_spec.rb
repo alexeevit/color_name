@@ -3,11 +3,12 @@
 require 'spec_helper'
 
 RSpec.describe ColorName::Color do
-  let(:hex) { '#FFC300' }
   let(:subject) { ColorName::Color.new(hex) }
 
   describe '#initialize' do
     context 'with full hex' do
+      let(:hex) { '#FFC300' }
+
       it 'creates object' do
         expect { subject }.not_to raise_error
       end
@@ -25,13 +26,15 @@ RSpec.describe ColorName::Color do
       let(:hex) { '#GF0' }
 
       it 'raises InvalidColor error' do
-        expect { subject }.to raise_error(ColorName::InvalidColor)
+        expect { subject }.to raise_error(ArgumentError, 'Invalid hex: "#GF0"')
       end
     end
   end
 
   describe '#name' do
     context 'with amber' do
+      let(:hex) { '#FFC300' }
+
       it 'returns proper name of color' do
         expect(subject.name).to eq('Amber')
       end
@@ -47,6 +50,7 @@ RSpec.describe ColorName::Color do
   end
 
   describe '#rgb' do
+    let(:hex) { '#FFC300' }
     let(:rgb) { [255, 195, 0] }
 
     it 'returns correct value' do
@@ -55,6 +59,7 @@ RSpec.describe ColorName::Color do
   end
 
   describe '#hsl' do
+    let(:hex) { '#FFC300' }
     let(:hsl) { [46, 1, 0.5] }
 
     it 'returns correct value' do

@@ -26,7 +26,7 @@ RSpec.describe ColorName do
       let(:hex) { '#g00' }
 
       it 'raises InvalidColor error' do
-        expect { subject }.to raise_error ColorName::InvalidColor
+        expect { subject }.to raise_error(ArgumentError, 'Invalid hex: "#g00"')
       end
     end
   end

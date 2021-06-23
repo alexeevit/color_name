@@ -22,11 +22,11 @@ module ColorName
 
     attr_reader :hex
 
-    def prepare_hex(hex)
-      hex = hex.to_s.upcase.strip.delete('#')
+    def prepare_hex(original_hex)
+      hex = original_hex.to_s.upcase.strip.delete('#')
       color_hex_regex = /^([A-F0-9]{6}|[A-F0-9]{3})$/
 
-      raise InvalidColor.new(hex) unless hex.match(color_hex_regex)
+      raise ArgumentError, "Invalid hex: \"#{original_hex}\"" unless hex.match(color_hex_regex)
 
       if hex.length == 3
         hex =
@@ -70,7 +70,7 @@ module ColorName
       closest = nil
       current_min_distance = -1
 
-      Names.all.each do |color|
+      Names.each do |color|
         return color[:name] if hex == color[:hex]
 
         distance_to_current_color = distance(rgb, color[:rgb]) + distance(hsl, color[:hsl]) * 2
